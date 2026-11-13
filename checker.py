@@ -60,7 +60,8 @@ class AIError(RuntimeError):
 
 def pick_models(api_key: str, preferred: str = "") -> list[str]:
     from google import genai
-    names = [m.name.removeprefix("models/") for m in genai.Client(api_key=api_key).models.list()
+    client = genai.Client(api_key=api_key)  # keep a reference: the model list is fetched page by page
+    names = [m.name.removeprefix("models/") for m in client.models.list()
              if "generateContent" in (getattr(m, "supported_actions", None) or [])]
     skip = ("lite", "image", "tts", "audio", "live", "embedding", "thinking", "exp", "learnlm", "8b")
     flash = [n for n in names if "flash" in n and not any(x in n for x in skip)]

@@ -23,7 +23,7 @@ with sync_playwright() as p:
         err = app.locator("[data-testid=stAlertContentError]").or_(app.locator("[data-testid=stException]"))
         try:
             app.get_by_role("button", name="Check the statement").click()
-            app.get_by_text("Show the details").or_(err).or_(app.locator("[data-testid=stAlertContentWarning]")).first.wait_for(timeout=300_000)
+            app.get_by_text("Show the details").or_(err).or_(app.locator("[data-testid=stAlertContentWarning]")).first.wait_for(timeout=600_000)
             page.wait_for_timeout(2_000)
             page.screenshot(path=str(out / "1_check.png"))
             (out / "1_check.txt").write_text(app.locator("[data-testid=stMain]").inner_text())
@@ -43,6 +43,10 @@ with sync_playwright() as p:
             print("test finished")
         except Exception as e:
             print("FAILED:", str(e)[:1000])
+            try:
+                print("PAGE:", app.locator("[data-testid=stMain]").inner_text()[-1500:])
+            except Exception:
+                pass
             page.screenshot(path=str(out / "error.png"))
             try:
                 (out / "error.txt").write_text(app.locator("[data-testid=stMain]").inner_text())

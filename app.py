@@ -50,7 +50,11 @@ def read_pdf(pdf: bytes, version: str):
         raise
     except Exception as e:
         raise C.AIError(str(e)) from e
-    return C.read_statement(pdf, API_KEY, ms)
+    note = st.empty()
+    out = C.read_statement(pdf, API_KEY, ms,
+                           on_wait=lambda why, k, w: note.caption(f"Waiting {w:.0f} s ({why}), attempt {k} of 6…"))
+    note.empty()
+    return out
 
 
 def saved():

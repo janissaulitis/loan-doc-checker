@@ -92,8 +92,8 @@ code { color: var(--k-hi) !important; background: var(--k-hi-bg) !important; bor
   .k-meta { text-align: left; }
   [data-testid="stMetricValue"], [data-testid="stMetricValue"] * { font-size: 30px !important; }
   /* number rows: two per line on phones instead of one long column */
-  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) { flex-wrap: wrap; flex-direction: row; gap: 14px 12px; }
-  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]) > [data-testid="stColumn"] { width: calc(50% - 6px) !important; flex: 0 0 calc(50% - 6px) !important; min-width: 0 !important; }
+  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]):not(:has([data-testid="stHorizontalBlock"])) { flex-wrap: wrap; flex-direction: row; gap: 14px 12px; }
+  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] [data-testid="stMetric"]):not(:has([data-testid="stHorizontalBlock"])) > [data-testid="stColumn"] { width: calc(50% - 6px) !important; flex: 0 0 calc(50% - 6px) !important; min-width: 0 !important; }
 }
 """
 

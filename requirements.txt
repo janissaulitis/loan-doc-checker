@@ -1,0 +1,3 @@
+streamlit>=1.50
+pandas
+google-genai>=1.0

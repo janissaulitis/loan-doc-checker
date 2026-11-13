@@ -1,0 +1,7 @@
+[theme.light]
+primaryColor = "#1f9d6f"
+codeTextColor = "#8a5a00"
+
+[theme.dark]
+primaryColor = "#2fb985"
+codeTextColor = "#f2c230"

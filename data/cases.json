@@ -1,0 +1,3066 @@
+[
+ {
+  "id": "S01",
+  "file": "statements/S01.pdf",
+  "language": "lv",
+  "currency": "EUR",
+  "application": {
+   "name": "Līga Bērziņa",
+   "monthly_net_income": 1300,
+   "employer": "SIA Baltic Logistics",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "consistent",
+   "issues": []
+  },
+  "note": "clean case",
+  "truth": {
+   "holder": "Līga Bērziņa",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Īre",
+     "amount": -380
+    },
+    {
+     "date": "2026-07-03",
+     "description": "Lidl",
+     "amount": -11.95
+    },
+    {
+     "date": "2026-07-03",
+     "description": "Rimi",
+     "amount": -50.88
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Elektrum rēķins",
+     "amount": -52.08
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-08",
+     "description": "Lidl",
+     "amount": -36.22
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Alga SIA Baltic Logistics",
+     "amount": 1320
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Rimi",
+     "amount": -36.51
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Lidl",
+     "amount": -56.84
+    },
+    {
+     "date": "2026-07-17",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-07-19",
+     "description": "Lidl",
+     "amount": -41.33
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Lidl",
+     "amount": -39.5
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Maxima",
+     "amount": -40.14
+    },
+    {
+     "date": "2026-07-26",
+     "description": "Lidl",
+     "amount": -32.41
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Īre",
+     "amount": -450
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Elektrum rēķins",
+     "amount": -61.08
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Maxima",
+     "amount": -21.32
+    },
+    {
+     "date": "2026-08-07",
+     "description": "Lidl",
+     "amount": -42.67
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Maxima",
+     "amount": -30.04
+    },
+    {
+     "date": "2026-08-09",
+     "description": "Lidl",
+     "amount": -62.05
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Alga SIA Baltic Logistics",
+     "amount": 1320
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Rimi",
+     "amount": -16.77
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Lidl",
+     "amount": -15.03
+    },
+    {
+     "date": "2026-08-21",
+     "description": "Lidl",
+     "amount": -10.25
+    },
+    {
+     "date": "2026-08-25",
+     "description": "Rimi",
+     "amount": -13.97
+    },
+    {
+     "date": "2026-08-28",
+     "description": "Lidl",
+     "amount": -59.52
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Īre",
+     "amount": -380
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Maxima",
+     "amount": -26.19
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Elektrum rēķins",
+     "amount": -66.16
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Lidl",
+     "amount": -31.07
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Lidl",
+     "amount": -33.26
+    },
+    {
+     "date": "2026-09-08",
+     "description": "Rimi",
+     "amount": -60.17
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Lidl",
+     "amount": -46.75
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Alga SIA Baltic Logistics",
+     "amount": 1320
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Maxima",
+     "amount": -49.65
+    },
+    {
+     "date": "2026-09-19",
+     "description": "Rimi",
+     "amount": -59.55
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Rimi",
+     "amount": -12.54
+    },
+    {
+     "date": "2026-09-28",
+     "description": "Maxima",
+     "amount": -38.89
+    }
+   ]
+  }
+ },
+ {
+  "id": "S02",
+  "file": "statements/S02.pdf",
+  "language": "pl",
+  "currency": "PLN",
+  "application": {
+   "name": "Marek Nowicki",
+   "monthly_net_income": 6500,
+   "employer": "TransPol Sp. z o.o.",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "mismatch",
+   "issues": [
+    "income_lower"
+   ]
+  },
+  "note": "stated income about 55% higher than the salary",
+  "truth": {
+   "holder": "Marek Nowicki",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-01",
+     "description": "Żabka",
+     "amount": -226.1
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Czynsz",
+     "amount": -1634
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Tauron rachunek",
+     "amount": -238.93
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Lidl",
+     "amount": -45.77
+    },
+    {
+     "date": "2026-07-08",
+     "description": "Biedronka",
+     "amount": -164.86
+    },
+    {
+     "date": "2026-07-09",
+     "description": "Żabka",
+     "amount": -63.9
+    },
+    {
+     "date": "2026-07-09",
+     "description": "Lidl",
+     "amount": -80.04
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Wynagrodzenie TransPol Sp. z o.o.",
+     "amount": 4200
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Biedronka",
+     "amount": -49.24
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Żabka",
+     "amount": -200.44
+    },
+    {
+     "date": "2026-07-13",
+     "description": "Wypłata z bankomatu",
+     "amount": -215
+    },
+    {
+     "date": "2026-07-21",
+     "description": "Żabka",
+     "amount": -151.69
+    },
+    {
+     "date": "2026-07-28",
+     "description": "Lidl",
+     "amount": -70.21
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Czynsz",
+     "amount": -1806
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Tauron rachunek",
+     "amount": -222.46
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Żabka",
+     "amount": -190.88
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Wynagrodzenie TransPol Sp. z o.o.",
+     "amount": 4200
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Żabka",
+     "amount": -114.18
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Wypłata z bankomatu",
+     "amount": -215
+    },
+    {
+     "date": "2026-08-20",
+     "description": "Lidl",
+     "amount": -162.27
+    },
+    {
+     "date": "2026-08-21",
+     "description": "Żabka",
+     "amount": -96.09
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Biedronka",
+     "amount": -165.86
+    },
+    {
+     "date": "2026-08-24",
+     "description": "Żabka",
+     "amount": -259.57
+    },
+    {
+     "date": "2026-08-24",
+     "description": "Biedronka",
+     "amount": -123.25
+    },
+    {
+     "date": "2026-08-26",
+     "description": "Żabka",
+     "amount": -117.07
+    },
+    {
+     "date": "2026-08-27",
+     "description": "Lidl",
+     "amount": -198.99
+    },
+    {
+     "date": "2026-09-01",
+     "description": "Żabka",
+     "amount": -115.78
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Czynsz",
+     "amount": -1806
+    },
+    {
+     "date": "2026-09-03",
+     "description": "Żabka",
+     "amount": -57.6
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Tauron rachunek",
+     "amount": -244.81
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Lidl",
+     "amount": -115.44
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-09-08",
+     "description": "Żabka",
+     "amount": -211.12
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Lidl",
+     "amount": -60.12
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Wynagrodzenie TransPol Sp. z o.o.",
+     "amount": 4250
+    },
+    {
+     "date": "2026-09-11",
+     "description": "Żabka",
+     "amount": -160.32
+    },
+    {
+     "date": "2026-09-13",
+     "description": "Żabka",
+     "amount": -40.87
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Wypłata z bankomatu",
+     "amount": -215
+    },
+    {
+     "date": "2026-09-17",
+     "description": "Żabka",
+     "amount": -107.07
+    },
+    {
+     "date": "2026-09-26",
+     "description": "Żabka",
+     "amount": -98.46
+    }
+   ]
+  }
+ },
+ {
+  "id": "S03",
+  "file": "statements/S03.pdf",
+  "language": "es",
+  "currency": "EUR",
+  "application": {
+   "name": "Lucía Romero García",
+   "monthly_net_income": 1450,
+   "employer": "Hostelería Sur SL",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "consistent",
+   "issues": []
+  },
+  "note": "salary paid in two parts each month",
+  "truth": {
+   "holder": "Lucía Romero García",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Alquiler",
+     "amount": -450
+    },
+    {
+     "date": "2026-07-03",
+     "description": "Carrefour",
+     "amount": -31.36
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Iberdrola recibo",
+     "amount": -50.34
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Dia",
+     "amount": -49.47
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Mercadona",
+     "amount": -47.97
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-08",
+     "description": "Mercadona",
+     "amount": -26.07
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 1000
+    },
+    {
+     "date": "2026-07-12",
+     "description": "Mercadona",
+     "amount": -38.83
+    },
+    {
+     "date": "2026-07-17",
+     "description": "Carrefour",
+     "amount": -30.21
+    },
+    {
+     "date": "2026-07-19",
+     "description": "Dia",
+     "amount": -45.69
+    },
+    {
+     "date": "2026-07-20",
+     "description": "Mercadona",
+     "amount": -22.5
+    },
+    {
+     "date": "2026-07-20",
+     "description": "Retirada cajero",
+     "amount": -50
+    },
+    {
+     "date": "2026-07-22",
+     "description": "Mercadona",
+     "amount": -44.15
+    },
+    {
+     "date": "2026-07-25",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 450
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Alquiler",
+     "amount": -380
+    },
+    {
+     "date": "2026-08-03",
+     "description": "Dia",
+     "amount": -41.75
+    },
+    {
+     "date": "2026-08-03",
+     "description": "Mercadona",
+     "amount": -50.44
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Iberdrola recibo",
+     "amount": -64.71
+    },
+    {
+     "date": "2026-08-05",
+     "description": "Mercadona",
+     "amount": -32.14
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 1000
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Retirada cajero",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-20",
+     "description": "Mercadona",
+     "amount": -62.51
+    },
+    {
+     "date": "2026-08-21",
+     "description": "Carrefour",
+     "amount": -17.44
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Dia",
+     "amount": -55.46
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Dia",
+     "amount": -28.18
+    },
+    {
+     "date": "2026-08-25",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 450
+    },
+    {
+     "date": "2026-08-26",
+     "description": "Mercadona",
+     "amount": -16.25
+    },
+    {
+     "date": "2026-08-27",
+     "description": "Carrefour",
+     "amount": -17.35
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Alquiler",
+     "amount": -420
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Iberdrola recibo",
+     "amount": -64.55
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Mercadona",
+     "amount": -41.11
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Carrefour",
+     "amount": -29.54
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 1000
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Carrefour",
+     "amount": -11.92
+    },
+    {
+     "date": "2026-09-11",
+     "description": "Dia",
+     "amount": -49.99
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Retirada cajero",
+     "amount": -100
+    },
+    {
+     "date": "2026-09-18",
+     "description": "Mercadona",
+     "amount": -24.24
+    },
+    {
+     "date": "2026-09-21",
+     "description": "Mercadona",
+     "amount": -23.54
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Mercadona",
+     "amount": -51.16
+    },
+    {
+     "date": "2026-09-25",
+     "description": "Nómina Hostelería Sur SL",
+     "amount": 450
+    },
+    {
+     "date": "2026-09-27",
+     "description": "Carrefour",
+     "amount": -26.31
+    },
+    {
+     "date": "2026-09-27",
+     "description": "Mercadona",
+     "amount": -34.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "S04",
+  "file": "statements/S04.pdf",
+  "language": "lt",
+  "currency": "EUR",
+  "application": {
+   "name": "Tomas Petrauskas",
+   "monthly_net_income": 1500,
+   "employer": "UAB Kauno Statyba",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "mismatch",
+   "issues": [
+    "name_mismatch"
+   ]
+  },
+  "note": "statement belongs to a different person (similar name)",
+  "truth": {
+   "holder": "Tomas Petraitis",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-01",
+     "description": "Iki",
+     "amount": -51.62
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Nuoma",
+     "amount": -450
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Maxima",
+     "amount": -56.65
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Ignitis sąskaita",
+     "amount": -42.04
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Darbo užmokestis UAB Kauno Statyba",
+     "amount": 1510
+    },
+    {
+     "date": "2026-07-13",
+     "description": "Norfa",
+     "amount": -40.1
+    },
+    {
+     "date": "2026-07-17",
+     "description": "Norfa",
+     "amount": -27.24
+    },
+    {
+     "date": "2026-07-19",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-07-22",
+     "description": "Norfa",
+     "amount": -28.06
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Norfa",
+     "amount": -47.94
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Norfa",
+     "amount": -15.93
+    },
+    {
+     "date": "2026-07-27",
+     "description": "Maxima",
+     "amount": -46.01
+    },
+    {
+     "date": "2026-07-28",
+     "description": "Maxima",
+     "amount": -17.89
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Nuoma",
+     "amount": -380
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Ignitis sąskaita",
+     "amount": -45.69
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Norfa",
+     "amount": -8.75
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Maxima",
+     "amount": -62.38
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Darbo užmokestis UAB Kauno Statyba",
+     "amount": 1510
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Maxima",
+     "amount": -64.55
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Norfa",
+     "amount": -36.57
+    },
+    {
+     "date": "2026-08-15",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-17",
+     "description": "Maxima",
+     "amount": -44.22
+    },
+    {
+     "date": "2026-08-18",
+     "description": "Norfa",
+     "amount": -25.72
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Iki",
+     "amount": -43.68
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Iki",
+     "amount": -41.12
+    },
+    {
+     "date": "2026-08-25",
+     "description": "Maxima",
+     "amount": -24.7
+    },
+    {
+     "date": "2026-09-01",
+     "description": "Iki",
+     "amount": -63.8
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Nuoma",
+     "amount": -380
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Ignitis sąskaita",
+     "amount": -36.42
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Iki",
+     "amount": -24.0
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-07",
+     "description": "Maxima",
+     "amount": -56.32
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Norfa",
+     "amount": -13.62
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Darbo užmokestis UAB Kauno Statyba",
+     "amount": 1510
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Norfa",
+     "amount": -30.94
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-09-17",
+     "description": "Norfa",
+     "amount": -53.19
+    },
+    {
+     "date": "2026-09-23",
+     "description": "Norfa",
+     "amount": -56.33
+    },
+    {
+     "date": "2026-09-24",
+     "description": "Iki",
+     "amount": -56.61
+    },
+    {
+     "date": "2026-09-27",
+     "description": "Iki",
+     "amount": -30.02
+    }
+   ]
+  }
+ },
+ {
+  "id": "S05",
+  "file": "statements/S05.pdf",
+  "language": "ro",
+  "currency": "RON",
+  "application": {
+   "name": "Andrei Popescu",
+   "monthly_net_income": 5200,
+   "employer": "SC Delta Distribuție SRL",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "mismatch",
+   "issues": [
+    "statement_old"
+   ]
+  },
+  "note": "statement ended about five months before the application",
+  "truth": {
+   "holder": "Andrei Popescu",
+   "period_end": "2026-02-28",
+   "transactions": [
+    {
+     "date": "2025-12-02",
+     "description": "Chirie",
+     "amount": -1900
+    },
+    {
+     "date": "2025-12-04",
+     "description": "Enel factură",
+     "amount": -282.13
+    },
+    {
+     "date": "2025-12-04",
+     "description": "Kaufland",
+     "amount": -246.04
+    },
+    {
+     "date": "2025-12-05",
+     "description": "Mega Image",
+     "amount": -124.62
+    },
+    {
+     "date": "2025-12-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2025-12-06",
+     "description": "Lidl",
+     "amount": -89.38
+    },
+    {
+     "date": "2025-12-08",
+     "description": "Mega Image",
+     "amount": -56.09
+    },
+    {
+     "date": "2025-12-09",
+     "description": "Kaufland",
+     "amount": -236.37
+    },
+    {
+     "date": "2025-12-10",
+     "description": "Salariu SC Delta Distribuție SRL",
+     "amount": 5200
+    },
+    {
+     "date": "2025-12-10",
+     "description": "Kaufland",
+     "amount": -200.64
+    },
+    {
+     "date": "2025-12-11",
+     "description": "Kaufland",
+     "amount": -210.83
+    },
+    {
+     "date": "2025-12-14",
+     "description": "Lidl",
+     "amount": -260.73
+    },
+    {
+     "date": "2025-12-15",
+     "description": "Mega Image",
+     "amount": -242.31
+    },
+    {
+     "date": "2025-12-16",
+     "description": "Retragere numerar",
+     "amount": -500
+    },
+    {
+     "date": "2026-01-02",
+     "description": "Chirie",
+     "amount": -2250
+    },
+    {
+     "date": "2026-01-04",
+     "description": "Enel factură",
+     "amount": -305.34
+    },
+    {
+     "date": "2026-01-05",
+     "description": "Lidl",
+     "amount": -56.43
+    },
+    {
+     "date": "2026-01-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2026-01-09",
+     "description": "Kaufland",
+     "amount": -93.75
+    },
+    {
+     "date": "2026-01-10",
+     "description": "Salariu SC Delta Distribuție SRL",
+     "amount": 5200
+    },
+    {
+     "date": "2026-01-12",
+     "description": "Lidl",
+     "amount": -95.88
+    },
+    {
+     "date": "2026-01-13",
+     "description": "Retragere numerar",
+     "amount": -250
+    },
+    {
+     "date": "2026-01-14",
+     "description": "Mega Image",
+     "amount": -200.85
+    },
+    {
+     "date": "2026-01-14",
+     "description": "Kaufland",
+     "amount": -310.66
+    },
+    {
+     "date": "2026-01-14",
+     "description": "Mega Image",
+     "amount": -186.21
+    },
+    {
+     "date": "2026-01-16",
+     "description": "Lidl",
+     "amount": -136.42
+    },
+    {
+     "date": "2026-01-18",
+     "description": "Kaufland",
+     "amount": -236.81
+    },
+    {
+     "date": "2026-01-22",
+     "description": "Mega Image",
+     "amount": -96.35
+    },
+    {
+     "date": "2026-02-02",
+     "description": "Chirie",
+     "amount": -2250
+    },
+    {
+     "date": "2026-02-03",
+     "description": "Mega Image",
+     "amount": -246.9
+    },
+    {
+     "date": "2026-02-04",
+     "description": "Enel factură",
+     "amount": -244.9
+    },
+    {
+     "date": "2026-02-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2026-02-10",
+     "description": "Salariu SC Delta Distribuție SRL",
+     "amount": 5200
+    },
+    {
+     "date": "2026-02-11",
+     "description": "Lidl",
+     "amount": -247.56
+    },
+    {
+     "date": "2026-02-11",
+     "description": "Lidl",
+     "amount": -77.95
+    },
+    {
+     "date": "2026-02-15",
+     "description": "Retragere numerar",
+     "amount": -500
+    },
+    {
+     "date": "2026-02-17",
+     "description": "Lidl",
+     "amount": -213.15
+    },
+    {
+     "date": "2026-02-20",
+     "description": "Kaufland",
+     "amount": -198.59
+    },
+    {
+     "date": "2026-02-20",
+     "description": "Mega Image",
+     "amount": -150.38
+    },
+    {
+     "date": "2026-02-21",
+     "description": "Kaufland",
+     "amount": -156.69
+    },
+    {
+     "date": "2026-02-27",
+     "description": "Mega Image",
+     "amount": -323.93
+    },
+    {
+     "date": "2026-02-28",
+     "description": "Mega Image",
+     "amount": -89.07
+    }
+   ]
+  }
+ },
+ {
+  "id": "S06",
+  "file": "statements/S06.pdf",
+  "language": "lv",
+  "currency": "EUR",
+  "application": {
+   "name": "Kristaps Ozols",
+   "monthly_net_income": 1600,
+   "employer": "SIA Vidzemes Mežs",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "review",
+   "issues": [
+    "undeclared_loan"
+   ]
+  },
+  "note": "pays another lender every month, declared no loans",
+  "truth": {
+   "holder": "Kristaps Ozols",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-07-03",
+     "description": "Maxima",
+     "amount": -24.46
+    },
+    {
+     "date": "2026-07-03",
+     "description": "Lidl",
+     "amount": -41.63
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Elektrum rēķins",
+     "amount": -58.1
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-08",
+     "description": "Lidl",
+     "amount": -44.38
+    },
+    {
+     "date": "2026-07-09",
+     "description": "Maxima",
+     "amount": -9.77
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Alga SIA Vidzemes Mežs",
+     "amount": 1610
+    },
+    {
+     "date": "2026-07-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -145
+    },
+    {
+     "date": "2026-07-18",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-07-19",
+     "description": "Rimi",
+     "amount": -25.82
+    },
+    {
+     "date": "2026-07-21",
+     "description": "Maxima",
+     "amount": -60.33
+    },
+    {
+     "date": "2026-07-25",
+     "description": "Maxima",
+     "amount": -11.32
+    },
+    {
+     "date": "2026-07-26",
+     "description": "Lidl",
+     "amount": -45.48
+    },
+    {
+     "date": "2026-07-27",
+     "description": "Rimi",
+     "amount": -57.54
+    },
+    {
+     "date": "2026-08-01",
+     "description": "Maxima",
+     "amount": -22.95
+    },
+    {
+     "date": "2026-08-01",
+     "description": "Lidl",
+     "amount": -56.14
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Elektrum rēķins",
+     "amount": -39.07
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Alga SIA Vidzemes Mežs",
+     "amount": 1610
+    },
+    {
+     "date": "2026-08-11",
+     "description": "Lidl",
+     "amount": -52.64
+    },
+    {
+     "date": "2026-08-15",
+     "description": "Rimi",
+     "amount": -24.95
+    },
+    {
+     "date": "2026-08-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -145
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-08-21",
+     "description": "Rimi",
+     "amount": -20.18
+    },
+    {
+     "date": "2026-08-22",
+     "description": "Lidl",
+     "amount": -58.28
+    },
+    {
+     "date": "2026-08-22",
+     "description": "Rimi",
+     "amount": -49.1
+    },
+    {
+     "date": "2026-08-27",
+     "description": "Rimi",
+     "amount": -16.23
+    },
+    {
+     "date": "2026-08-27",
+     "description": "Rimi",
+     "amount": -49.92
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Īre",
+     "amount": -380
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Elektrum rēķins",
+     "amount": -45.38
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Lidl",
+     "amount": -44.95
+    },
+    {
+     "date": "2026-09-08",
+     "description": "Maxima",
+     "amount": -31.33
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Maxima",
+     "amount": -13.62
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Maxima",
+     "amount": -19.57
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Alga SIA Vidzemes Mežs",
+     "amount": 1610
+    },
+    {
+     "date": "2026-09-11",
+     "description": "Lidl",
+     "amount": -33.01
+    },
+    {
+     "date": "2026-09-14",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-09-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -145
+    },
+    {
+     "date": "2026-09-17",
+     "description": "Maxima",
+     "amount": -28.35
+    },
+    {
+     "date": "2026-09-17",
+     "description": "Lidl",
+     "amount": -29.15
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Lidl",
+     "amount": -51.72
+    },
+    {
+     "date": "2026-09-28",
+     "description": "Maxima",
+     "amount": -35.57
+    }
+   ]
+  }
+ },
+ {
+  "id": "S07",
+  "file": "statements/S07.pdf",
+  "language": "lv",
+  "currency": "EUR",
+  "application": {
+   "name": "Edgars Kalniņš",
+   "monthly_net_income": 1400,
+   "employer": "SIA Rīgas Auto",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "review",
+   "issues": [
+    "gambling"
+   ]
+  },
+  "note": "frequent payments to an online casino",
+  "truth": {
+   "holder": "Edgars Kalniņš",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-01",
+     "description": "Rimi",
+     "amount": -40.69
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Īre",
+     "amount": -450
+    },
+    {
+     "date": "2026-07-02",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -25
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Elektrum rēķins",
+     "amount": -57.84
+    },
+    {
+     "date": "2026-07-05",
+     "description": "Rimi",
+     "amount": -19.0
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-07",
+     "description": "Maxima",
+     "amount": -41.8
+    },
+    {
+     "date": "2026-07-07",
+     "description": "LuckySpin Casino Ltd izmaksa",
+     "amount": 60
+    },
+    {
+     "date": "2026-07-09",
+     "description": "Lidl",
+     "amount": -20.71
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Alga SIA Rīgas Auto",
+     "amount": 1400
+    },
+    {
+     "date": "2026-07-11",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -100
+    },
+    {
+     "date": "2026-07-12",
+     "description": "Lidl",
+     "amount": -23.94
+    },
+    {
+     "date": "2026-07-12",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-07-12",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -50
+    },
+    {
+     "date": "2026-07-14",
+     "description": "Rimi",
+     "amount": -14.78
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Maxima",
+     "amount": -57.8
+    },
+    {
+     "date": "2026-07-16",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -25
+    },
+    {
+     "date": "2026-07-19",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -25
+    },
+    {
+     "date": "2026-07-21",
+     "description": "Lidl",
+     "amount": -26.74
+    },
+    {
+     "date": "2026-07-21",
+     "description": "Maxima",
+     "amount": -33.12
+    },
+    {
+     "date": "2026-07-22",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -20
+    },
+    {
+     "date": "2026-07-24",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -40
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-08-03",
+     "description": "Maxima",
+     "amount": -47.83
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Elektrum rēķins",
+     "amount": -68.97
+    },
+    {
+     "date": "2026-08-05",
+     "description": "Maxima",
+     "amount": -41.71
+    },
+    {
+     "date": "2026-08-05",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -100
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Rimi",
+     "amount": -62.37
+    },
+    {
+     "date": "2026-08-06",
+     "description": "LuckySpin Casino Ltd izmaksa",
+     "amount": 60
+    },
+    {
+     "date": "2026-08-07",
+     "description": "Lidl",
+     "amount": -14.61
+    },
+    {
+     "date": "2026-08-07",
+     "description": "Maxima",
+     "amount": -42.58
+    },
+    {
+     "date": "2026-08-08",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Alga SIA Rīgas Auto",
+     "amount": 1400
+    },
+    {
+     "date": "2026-08-10",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -100
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-13",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -100
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Maxima",
+     "amount": -48.75
+    },
+    {
+     "date": "2026-08-19",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -25
+    },
+    {
+     "date": "2026-08-20",
+     "description": "Lidl",
+     "amount": -63.07
+    },
+    {
+     "date": "2026-08-20",
+     "description": "Lidl",
+     "amount": -59.24
+    },
+    {
+     "date": "2026-08-21",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Maxima",
+     "amount": -18.57
+    },
+    {
+     "date": "2026-08-25",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -50
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Maxima",
+     "amount": -64.86
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Elektrum rēķins",
+     "amount": -46.64
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Maxima",
+     "amount": -23.41
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Lidl",
+     "amount": -40.04
+    },
+    {
+     "date": "2026-09-06",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -40
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Lidl",
+     "amount": -43.63
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Lidl",
+     "amount": -45.36
+    },
+    {
+     "date": "2026-09-09",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -50
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Alga SIA Rīgas Auto",
+     "amount": 1400
+    },
+    {
+     "date": "2026-09-11",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -20
+    },
+    {
+     "date": "2026-09-11",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -40
+    },
+    {
+     "date": "2026-09-14",
+     "description": "Rimi",
+     "amount": -44.73
+    },
+    {
+     "date": "2026-09-14",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -40
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -100
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Lidl",
+     "amount": -58.31
+    },
+    {
+     "date": "2026-09-23",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -20
+    },
+    {
+     "date": "2026-09-24",
+     "description": "Lidl",
+     "amount": -26.38
+    },
+    {
+     "date": "2026-09-24",
+     "description": "Maxima",
+     "amount": -53.72
+    },
+    {
+     "date": "2026-09-24",
+     "description": "LuckySpin Casino Ltd online",
+     "amount": -20
+    },
+    {
+     "date": "2026-09-24",
+     "description": "LuckySpin Casino Ltd izmaksa",
+     "amount": 60
+    }
+   ]
+  }
+ },
+ {
+  "id": "S08",
+  "file": "statements/S08.pdf",
+  "language": "pl",
+  "currency": "PLN",
+  "application": {
+   "name": "Anna Wiśniewska",
+   "monthly_net_income": 5100,
+   "employer": "Medicus Kraków Sp. z o.o.",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "review",
+   "issues": [
+    "bounced_payments"
+   ]
+  },
+  "note": "direct debits returned for lack of funds, with fees",
+  "truth": {
+   "holder": "Anna Wiśniewska",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Czynsz",
+     "amount": -1806
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Tauron rachunek",
+     "amount": -272.03
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Lidl",
+     "amount": -60.5
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Lidl",
+     "amount": -201.19
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Wynagrodzenie Medicus Kraków Sp. z o.o.",
+     "amount": 5100
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Biedronka",
+     "amount": -248.78
+    },
+    {
+     "date": "2026-07-17",
+     "description": "Biedronka",
+     "amount": -231.55
+    },
+    {
+     "date": "2026-07-20",
+     "description": "Wypłata z bankomatu",
+     "amount": -430
+    },
+    {
+     "date": "2026-07-21",
+     "description": "Lidl",
+     "amount": -90.35
+    },
+    {
+     "date": "2026-07-22",
+     "description": "Biedronka",
+     "amount": -42.87
+    },
+    {
+     "date": "2026-07-22",
+     "description": "Biedronka",
+     "amount": -126.39
+    },
+    {
+     "date": "2026-07-25",
+     "description": "Lidl",
+     "amount": -210.55
+    },
+    {
+     "date": "2026-07-28",
+     "description": "Lidl",
+     "amount": -188.36
+    },
+    {
+     "date": "2026-08-01",
+     "description": "Biedronka",
+     "amount": -79.87
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Czynsz",
+     "amount": -1634
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Tauron rachunek",
+     "amount": -283.63
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Lidl",
+     "amount": -74.84
+    },
+    {
+     "date": "2026-08-09",
+     "description": "Żabka",
+     "amount": -142.15
+    },
+    {
+     "date": "2026-08-09",
+     "description": "Biedronka",
+     "amount": -168.08
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Wynagrodzenie Medicus Kraków Sp. z o.o.",
+     "amount": 5100
+    },
+    {
+     "date": "2026-08-11",
+     "description": "Biedronka",
+     "amount": -202.89
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Polecenie zapłaty Orange zwrócone – brak środków",
+     "amount": 0.0
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Opłata za brak środków na rachunku",
+     "amount": -15.0
+    },
+    {
+     "date": "2026-08-18",
+     "description": "Lidl",
+     "amount": -100.7
+    },
+    {
+     "date": "2026-08-19",
+     "description": "Wypłata z bankomatu",
+     "amount": -215
+    },
+    {
+     "date": "2026-08-24",
+     "description": "Żabka",
+     "amount": -271.57
+    },
+    {
+     "date": "2026-08-26",
+     "description": "Lidl",
+     "amount": -253.02
+    },
+    {
+     "date": "2026-08-28",
+     "description": "Żabka",
+     "amount": -187.51
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Czynsz",
+     "amount": -1806
+    },
+    {
+     "date": "2026-09-03",
+     "description": "Żabka",
+     "amount": -245.81
+    },
+    {
+     "date": "2026-09-03",
+     "description": "Biedronka",
+     "amount": -232.21
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Tauron rachunek",
+     "amount": -179.48
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Bilet miesięczny ZTM",
+     "amount": -129.0
+    },
+    {
+     "date": "2026-09-08",
+     "description": "Lidl",
+     "amount": -228.17
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Wynagrodzenie Medicus Kraków Sp. z o.o.",
+     "amount": 5100
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Żabka",
+     "amount": -260.31
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Biedronka",
+     "amount": -155.35
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Polecenie zapłaty Orange zwrócone – brak środków",
+     "amount": 0.0
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Opłata za brak środków na rachunku",
+     "amount": -15.0
+    },
+    {
+     "date": "2026-09-15",
+     "description": "Biedronka",
+     "amount": -143.08
+    },
+    {
+     "date": "2026-09-18",
+     "description": "Żabka",
+     "amount": -111.92
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Wypłata z bankomatu",
+     "amount": -215
+    },
+    {
+     "date": "2026-09-23",
+     "description": "Lidl",
+     "amount": -157.03
+    },
+    {
+     "date": "2026-09-26",
+     "description": "Żabka",
+     "amount": -67.8
+    }
+   ]
+  }
+ },
+ {
+  "id": "S09",
+  "file": "statements/S09.pdf",
+  "language": "es",
+  "currency": "EUR",
+  "application": {
+   "name": "Javier Ortega Ruiz",
+   "monthly_net_income": 1800,
+   "employer": "self-employed",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "consistent",
+   "issues": []
+  },
+  "note": "self-employed: irregular client payments, average close to stated",
+  "truth": {
+   "holder": "Javier Ortega Ruiz",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Alquiler",
+     "amount": -420
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Iberdrola recibo",
+     "amount": -68.93
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Dia",
+     "amount": -45.48
+    },
+    {
+     "date": "2026-07-05",
+     "description": "Transferencia cliente Estudio Nébula SL factura",
+     "amount": 1100
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-07",
+     "description": "Mercadona",
+     "amount": -54.89
+    },
+    {
+     "date": "2026-07-09",
+     "description": "Mercadona",
+     "amount": -55.64
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Carrefour",
+     "amount": -55.83
+    },
+    {
+     "date": "2026-07-13",
+     "description": "Mercadona",
+     "amount": -11.67
+    },
+    {
+     "date": "2026-07-14",
+     "description": "Transferencia cliente Grupo Faro factura",
+     "amount": 520
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Carrefour",
+     "amount": -48.89
+    },
+    {
+     "date": "2026-07-18",
+     "description": "Dia",
+     "amount": -16.36
+    },
+    {
+     "date": "2026-07-20",
+     "description": "Retirada cajero",
+     "amount": -100
+    },
+    {
+     "date": "2026-07-23",
+     "description": "Transferencia cliente Ana Molina factura",
+     "amount": 310
+    },
+    {
+     "date": "2026-07-23",
+     "description": "Mercadona",
+     "amount": -41.75
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Dia",
+     "amount": -51.75
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Alquiler",
+     "amount": -450
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Mercadona",
+     "amount": -37.56
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Iberdrola recibo",
+     "amount": -40.45
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Dia",
+     "amount": -33.15
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Dia",
+     "amount": -64.38
+    },
+    {
+     "date": "2026-08-05",
+     "description": "Transferencia cliente Estudio Nébula SL factura",
+     "amount": 640
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Carrefour",
+     "amount": -11.22
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Mercadona",
+     "amount": -42.89
+    },
+    {
+     "date": "2026-08-09",
+     "description": "Mercadona",
+     "amount": -43.03
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Retirada cajero",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Transferencia cliente Grupo Faro factura",
+     "amount": 1290
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Dia",
+     "amount": -29.93
+    },
+    {
+     "date": "2026-08-22",
+     "description": "Carrefour",
+     "amount": -55.47
+    },
+    {
+     "date": "2026-08-28",
+     "description": "Dia",
+     "amount": -23.89
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Alquiler",
+     "amount": -450
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Dia",
+     "amount": -52.29
+    },
+    {
+     "date": "2026-09-03",
+     "description": "Dia",
+     "amount": -22.44
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Iberdrola recibo",
+     "amount": -35.15
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Transferencia cliente Estudio Nébula SL factura",
+     "amount": 900
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Abono transporte",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Mercadona",
+     "amount": -63.6
+    },
+    {
+     "date": "2026-09-14",
+     "description": "Transferencia cliente Grupo Faro factura",
+     "amount": 700
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Carrefour",
+     "amount": -14.11
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Retirada cajero",
+     "amount": -100
+    },
+    {
+     "date": "2026-09-21",
+     "description": "Carrefour",
+     "amount": -27.79
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Mercadona",
+     "amount": -18.15
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Carrefour",
+     "amount": -50.41
+    },
+    {
+     "date": "2026-09-22",
+     "description": "Mercadona",
+     "amount": -13.63
+    },
+    {
+     "date": "2026-09-23",
+     "description": "Transferencia cliente Ana Molina factura",
+     "amount": 280
+    },
+    {
+     "date": "2026-09-24",
+     "description": "Mercadona",
+     "amount": -56.93
+    }
+   ]
+  }
+ },
+ {
+  "id": "S10",
+  "file": "statements/S10.pdf",
+  "language": "lt",
+  "currency": "EUR",
+  "application": {
+   "name": "Rūta Jankauskienė",
+   "monthly_net_income": 1700,
+   "employer": "UAB Vilniaus Duomenys",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "consistent",
+   "issues": []
+  },
+  "note": "one-off bonus in one month should not lift the income",
+  "truth": {
+   "holder": "Rūta Jankauskienė",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-01",
+     "description": "Norfa",
+     "amount": -30.5
+    },
+    {
+     "date": "2026-07-01",
+     "description": "Iki",
+     "amount": -15.26
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Nuoma",
+     "amount": -420
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Ignitis sąskaita",
+     "amount": -56.35
+    },
+    {
+     "date": "2026-07-05",
+     "description": "Iki",
+     "amount": -20.2
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Darbo užmokestis UAB Vilniaus Duomenys",
+     "amount": 1700
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Norfa",
+     "amount": -62.94
+    },
+    {
+     "date": "2026-07-13",
+     "description": "Iki",
+     "amount": -48.85
+    },
+    {
+     "date": "2026-07-14",
+     "description": "Norfa",
+     "amount": -17.86
+    },
+    {
+     "date": "2026-07-18",
+     "description": "Iki",
+     "amount": -55.43
+    },
+    {
+     "date": "2026-07-18",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-07-28",
+     "description": "Maxima",
+     "amount": -35.49
+    },
+    {
+     "date": "2026-07-28",
+     "description": "Norfa",
+     "amount": -42.73
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Nuoma",
+     "amount": -450
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Ignitis sąskaita",
+     "amount": -52.71
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-07",
+     "description": "Iki",
+     "amount": -61.0
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Iki",
+     "amount": -63.89
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Darbo užmokestis UAB Vilniaus Duomenys",
+     "amount": 1700
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Norfa",
+     "amount": -43.72
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Norfa",
+     "amount": -30.39
+    },
+    {
+     "date": "2026-08-15",
+     "description": "Darbo užmokestis bonus UAB Vilniaus Duomenys",
+     "amount": 2400
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Iki",
+     "amount": -40.27
+    },
+    {
+     "date": "2026-08-20",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-21",
+     "description": "Iki",
+     "amount": -55.45
+    },
+    {
+     "date": "2026-08-23",
+     "description": "Iki",
+     "amount": -52.72
+    },
+    {
+     "date": "2026-08-26",
+     "description": "Norfa",
+     "amount": -41.58
+    },
+    {
+     "date": "2026-08-26",
+     "description": "Maxima",
+     "amount": -49.01
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Nuoma",
+     "amount": -450
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Norfa",
+     "amount": -11.39
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Ignitis sąskaita",
+     "amount": -49.14
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Iki",
+     "amount": -63.12
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Vilniaus viešasis transportas",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-09",
+     "description": "Maxima",
+     "amount": -46.06
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Darbo užmokestis UAB Vilniaus Duomenys",
+     "amount": 1700
+    },
+    {
+     "date": "2026-09-11",
+     "description": "Norfa",
+     "amount": -8.45
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Maxima",
+     "amount": -34.05
+    },
+    {
+     "date": "2026-09-15",
+     "description": "Grynųjų išėmimas",
+     "amount": -50
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Maxima",
+     "amount": -20.82
+    },
+    {
+     "date": "2026-09-18",
+     "description": "Maxima",
+     "amount": -38.2
+    },
+    {
+     "date": "2026-09-23",
+     "description": "Norfa",
+     "amount": -51.38
+    },
+    {
+     "date": "2026-09-27",
+     "description": "Maxima",
+     "amount": -27.9
+    }
+   ]
+  }
+ },
+ {
+  "id": "S11",
+  "file": "statements/S11.pdf",
+  "language": "ro",
+  "currency": "RON",
+  "application": {
+   "name": "Elena Ionescu",
+   "monthly_net_income": 4800,
+   "employer": "SC Textil Nord SA",
+   "declared_loan_payments": 0,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "review",
+   "issues": [
+    "income_stopped"
+   ]
+  },
+  "note": "no salary in the most recent month",
+  "truth": {
+   "holder": "Elena Ionescu",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Chirie",
+     "amount": -2250
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Enel factură",
+     "amount": -187.83
+    },
+    {
+     "date": "2026-07-05",
+     "description": "Mega Image",
+     "amount": -76.94
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2026-07-07",
+     "description": "Lidl",
+     "amount": -195.49
+    },
+    {
+     "date": "2026-07-08",
+     "description": "Mega Image",
+     "amount": -294.02
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Salariu SC Textil Nord SA",
+     "amount": 4800
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Kaufland",
+     "amount": -182.71
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Mega Image",
+     "amount": -252.91
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Lidl",
+     "amount": -236.66
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Retragere numerar",
+     "amount": -500
+    },
+    {
+     "date": "2026-07-20",
+     "description": "Mega Image",
+     "amount": -40.27
+    },
+    {
+     "date": "2026-07-24",
+     "description": "Lidl",
+     "amount": -190.09
+    },
+    {
+     "date": "2026-07-25",
+     "description": "Kaufland",
+     "amount": -68.4
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Chirie",
+     "amount": -2100
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Enel factură",
+     "amount": -237.85
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2026-08-08",
+     "description": "Mega Image",
+     "amount": -279.09
+    },
+    {
+     "date": "2026-08-09",
+     "description": "Mega Image",
+     "amount": -78.52
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Salariu SC Textil Nord SA",
+     "amount": 4800
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Kaufland",
+     "amount": -99.64
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Kaufland",
+     "amount": -42.31
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Kaufland",
+     "amount": -82.4
+    },
+    {
+     "date": "2026-08-12",
+     "description": "Lidl",
+     "amount": -184.78
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Kaufland",
+     "amount": -160.23
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Lidl",
+     "amount": -59.44
+    },
+    {
+     "date": "2026-08-18",
+     "description": "Retragere numerar",
+     "amount": -250
+    },
+    {
+     "date": "2026-08-25",
+     "description": "Mega Image",
+     "amount": -300.44
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Chirie",
+     "amount": -2100
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Enel factură",
+     "amount": -319.12
+    },
+    {
+     "date": "2026-09-05",
+     "description": "Kaufland",
+     "amount": -245.65
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Abonament STB",
+     "amount": -150
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Kaufland",
+     "amount": -49.2
+    },
+    {
+     "date": "2026-09-14",
+     "description": "Lidl",
+     "amount": -153.73
+    },
+    {
+     "date": "2026-09-18",
+     "description": "Mega Image",
+     "amount": -89.89
+    },
+    {
+     "date": "2026-09-18",
+     "description": "Mega Image",
+     "amount": -88.11
+    },
+    {
+     "date": "2026-09-19",
+     "description": "Kaufland",
+     "amount": -289.58
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Lidl",
+     "amount": -180.55
+    },
+    {
+     "date": "2026-09-20",
+     "description": "Retragere numerar",
+     "amount": -500
+    },
+    {
+     "date": "2026-09-23",
+     "description": "Mega Image",
+     "amount": -153.86
+    },
+    {
+     "date": "2026-09-25",
+     "description": "Lidl",
+     "amount": -263.76
+    }
+   ]
+  }
+ },
+ {
+  "id": "S12",
+  "file": "statements/S12.pdf",
+  "language": "lv",
+  "currency": "EUR",
+  "application": {
+   "name": "Jānis Liepa",
+   "monthly_net_income": 1250,
+   "employer": "SIA Liepājas Osta",
+   "declared_loan_payments": 90,
+   "applied_on": "2026-10-20"
+  },
+  "expected": {
+   "verdict": "review",
+   "issues": [
+    "undeclared_loan"
+   ]
+  },
+  "note": "three lenders, only one declared (90)",
+  "truth": {
+   "holder": "Jānis Liepa",
+   "period_end": "2026-09-30",
+   "transactions": [
+    {
+     "date": "2026-07-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-07-02",
+     "description": "Rimi",
+     "amount": -35.18
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Elektrum rēķins",
+     "amount": -45.83
+    },
+    {
+     "date": "2026-07-04",
+     "description": "Lidl",
+     "amount": -11.17
+    },
+    {
+     "date": "2026-07-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-07-10",
+     "description": "Alga SIA Liepājas Osta",
+     "amount": 1250
+    },
+    {
+     "date": "2026-07-11",
+     "description": "Lidl",
+     "amount": -54.88
+    },
+    {
+     "date": "2026-07-12",
+     "description": "Lidl",
+     "amount": -29.91
+    },
+    {
+     "date": "2026-07-14",
+     "description": "Rimi",
+     "amount": -24.64
+    },
+    {
+     "date": "2026-07-14",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -50
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Lidl",
+     "amount": -21.88
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Rimi",
+     "amount": -20.63
+    },
+    {
+     "date": "2026-07-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -90
+    },
+    {
+     "date": "2026-07-15",
+     "description": "NaudaTūlīt SIA kredīta atmaksa",
+     "amount": -120
+    },
+    {
+     "date": "2026-07-15",
+     "description": "Kredītu Ātrums SIA maksājums",
+     "amount": -75
+    },
+    {
+     "date": "2026-07-16",
+     "description": "Rimi",
+     "amount": -50.33
+    },
+    {
+     "date": "2026-07-18",
+     "description": "Rimi",
+     "amount": -51.24
+    },
+    {
+     "date": "2026-08-02",
+     "description": "Īre",
+     "amount": -420
+    },
+    {
+     "date": "2026-08-04",
+     "description": "Elektrum rēķins",
+     "amount": -39.41
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Lidl",
+     "amount": -28.85
+    },
+    {
+     "date": "2026-08-06",
+     "description": "Maxima",
+     "amount": -38.8
+    },
+    {
+     "date": "2026-08-10",
+     "description": "Alga SIA Liepājas Osta",
+     "amount": 1250
+    },
+    {
+     "date": "2026-08-11",
+     "description": "Maxima",
+     "amount": -56.2
+    },
+    {
+     "date": "2026-08-13",
+     "description": "Rimi",
+     "amount": -20.83
+    },
+    {
+     "date": "2026-08-14",
+     "description": "Maxima",
+     "amount": -56.2
+    },
+    {
+     "date": "2026-08-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -90
+    },
+    {
+     "date": "2026-08-15",
+     "description": "NaudaTūlīt SIA kredīta atmaksa",
+     "amount": -120
+    },
+    {
+     "date": "2026-08-15",
+     "description": "Kredītu Ātrums SIA maksājums",
+     "amount": -75
+    },
+    {
+     "date": "2026-08-16",
+     "description": "Lidl",
+     "amount": -43.02
+    },
+    {
+     "date": "2026-08-18",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -50
+    },
+    {
+     "date": "2026-08-19",
+     "description": "Rimi",
+     "amount": -56.79
+    },
+    {
+     "date": "2026-08-24",
+     "description": "Lidl",
+     "amount": -46.98
+    },
+    {
+     "date": "2026-08-25",
+     "description": "Maxima",
+     "amount": -36.39
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Īre",
+     "amount": -380
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Lidl",
+     "amount": -18.95
+    },
+    {
+     "date": "2026-09-02",
+     "description": "Lidl",
+     "amount": -47.89
+    },
+    {
+     "date": "2026-09-03",
+     "description": "Lidl",
+     "amount": -18.35
+    },
+    {
+     "date": "2026-09-04",
+     "description": "Elektrum rēķins",
+     "amount": -44.94
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Rīgas Satiksme e-talons",
+     "amount": -30
+    },
+    {
+     "date": "2026-09-06",
+     "description": "Maxima",
+     "amount": -33.24
+    },
+    {
+     "date": "2026-09-10",
+     "description": "Alga SIA Liepājas Osta",
+     "amount": 1250
+    },
+    {
+     "date": "2026-09-12",
+     "description": "Rimi",
+     "amount": -20.48
+    },
+    {
+     "date": "2026-09-13",
+     "description": "Rimi",
+     "amount": -37.51
+    },
+    {
+     "date": "2026-09-14",
+     "description": "Rimi",
+     "amount": -64.12
+    },
+    {
+     "date": "2026-09-15",
+     "description": "ZibensKredīts SIA aizdevuma maksājums",
+     "amount": -90
+    },
+    {
+     "date": "2026-09-15",
+     "description": "NaudaTūlīt SIA kredīta atmaksa",
+     "amount": -120
+    },
+    {
+     "date": "2026-09-15",
+     "description": "Kredītu Ātrums SIA maksājums",
+     "amount": -75
+    },
+    {
+     "date": "2026-09-16",
+     "description": "Skaidras naudas izņemšana",
+     "amount": -50
+    },
+    {
+     "date": "2026-09-21",
+     "description": "Rimi",
+     "amount": -43.48
+    },
+    {
+     "date": "2026-09-21",
+     "description": "Maxima",
+     "amount": -15.34
+    }
+   ]
+  }
+ }
+]

@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install playwright && python -m playwright install --with-deps chromium
-      - run: python .github/check_app.py ${{ github.event.inputs.mode || 'wake' }}
+      - run: python -u .github/check_app.py ${{ github.event.inputs.mode || 'wake' }}
       - name: Show page text
         if: always()
         run: for f in out/*.txt; do [ -f "$f" ] && { echo "===== $f"; cat "$f"; }; done; true

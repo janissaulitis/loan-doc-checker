@@ -1,6 +1,7 @@
 """Opens the live app in a real browser and wakes it if asleep. Mode "test": checks one statement, runs the
 12-statement accuracy test, and saves the AI's readings (test.json), screenshots and page text."""
 import sys
+import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -25,10 +26,12 @@ with sync_playwright() as p:
             app.get_by_role("button", name="Check the statement").click()
             app.get_by_text("Show the details").or_(err).or_(app.locator("[data-testid=stAlertContentWarning]")).first.wait_for(timeout=600_000)
             page.wait_for_timeout(2_000)
+            print(f"single check done at {time.strftime('%H:%M:%S')}")
             page.screenshot(path=str(out / "1_check.png"))
             (out / "1_check.txt").write_text(app.locator("[data-testid=stMain]").inner_text())
             app.get_by_role("tab", name="Accuracy test").click()
             app.get_by_role("button", name="Run").first.click()
+            print(f"test started at {time.strftime('%H:%M:%S')}")
             app.get_by_text("Right verdict").or_(err).first.wait_for(timeout=1_200_000)
             page.wait_for_timeout(3_000)
             page.screenshot(path=str(out / "2_test.png"))

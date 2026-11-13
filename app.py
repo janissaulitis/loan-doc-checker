@@ -133,9 +133,11 @@ with tab_check:
         statement, source = None, ""
         if API_KEY:
             try:
+                import time as _t
+                t0 = _t.time()
                 with st.spinner("The AI is reading the statement…"):
                     statement, used = read_pdf(pdf, C.PROMPT_VERSION)
-                source = f"Read by {used} · checks are fixed code (checker.py), not AI."
+                source = f"Read by {used} in {_t.time() - t0:.0f} s · checks are fixed code (checker.py), not AI."
             except C.AIError as e:
                 st.warning(error_text(e))
         if statement is None and case:

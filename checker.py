@@ -31,8 +31,8 @@ SYSTEM = f"""You read bank statements for a lender's underwriting team. The stat
 Return JSON only, following the schema. Read every page and every transaction row; do not skip or merge rows.
 - holder: the account holder's full name exactly as printed.
 - bank, currency (ISO code), period_start and period_end (YYYY-MM-DD) as printed on the statement.
-- transactions: every row except the opening balance, with date (YYYY-MM-DD), description as printed, amount as a
-  number (negative for money out, positive for money in, 0 if the row shows no amount) and one category:
+- transactions: every row except the opening balance, with d = date (YYYY-MM-DD), t = description as printed,
+  a = amount as a number (negative for money out, positive for money in, 0 if the row shows no amount) and c = one category:
 {chr(10).join(f"  - {k}: {v}" for k, v in CATEGORIES.items())}
 A payment that went to a lender is loan_repayment even if the lender's name is unfamiliar. A row saying a payment was
 returned or refused for lack of funds is returned_payment. Do not judge or summarise the customer; just read."""
@@ -42,14 +42,15 @@ SCHEMA = {
     "properties": {
         "holder": {"type": "STRING"}, "bank": {"type": "STRING"}, "currency": {"type": "STRING"},
         "period_start": {"type": "STRING"}, "period_end": {"type": "STRING"},
+        # short keys keep the answer small, and the answer's length is what makes a model slow
         "transactions": {"type": "ARRAY", "items": {"type": "OBJECT", "properties": {
-            "date": {"type": "STRING"}, "description": {"type": "STRING"}, "amount": {"type": "NUMBER"},
-            "category": {"type": "STRING", "enum": list(CATEGORIES)}},
-            "required": ["date", "description", "amount", "category"]}},
+            "d": {"type": "STRING"}, "t": {"type": "STRING"}, "a": {"type": "NUMBER"},
+            "c": {"type": "STRING", "enum": list(CATEGORIES)}},
+            "required": ["d", "t", "a", "c"]}},
     },
     "required": ["holder", "bank", "currency", "period_start", "period_end", "transactions"],
 }
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2"
 
 
 class AIError(RuntimeError):
@@ -78,9 +79,24 @@ def pick_models(api_key: str, preferred: str = "") -> list[str]:
     return ranked
 
 
+def pdf_text(pdf: bytes) -> str:
+    """The statement's own text layer. Empty for a scanned (image-only) PDF."""
+    import io
+    from pypdf import PdfReader
+    try:
+        return "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(pdf)).pages).strip()
+    except Exception:
+        return ""
+
+
 def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) -> tuple[dict, str]:
+    """Sends the statement's text when it has one (fast, small), the PDF itself when it is a scan."""
     from google import genai
     from google.genai import types
+
+    text = pdf_text(pdf)
+    content = ([f"Bank statement text (one value per line, as extracted from the PDF):\n{text}"] if len(text) > 200
+               else [types.Part.from_bytes(data=pdf, mime_type="application/pdf"), "Read this bank statement."])
 
     client = genai.Client(api_key=api_key)
     models = list(models)
@@ -94,9 +110,11 @@ def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) ->
                 cfg["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
             resp = client.models.generate_content(
                 model=model,
-                contents=[types.Part.from_bytes(data=pdf, mime_type="application/pdf"), "Read this bank statement."],
-                config=types.GenerateContentConfig(**cfg))
-            return json.loads(resp.text), getattr(resp, "model_version", None) or model
+                contents=content, config=types.GenerateContentConfig(**cfg))
+            raw = json.loads(resp.text)
+            raw["transactions"] = [{"date": t.get("d", ""), "description": t.get("t", ""), "amount": float(t.get("a") or 0),
+                                    "category": t.get("c", "other")} for t in raw.get("transactions", [])]
+            return raw, getattr(resp, "model_version", None) or model
         except Exception as e:
             msg = str(e)
             if think_off and "thinking" in msg.lower():

@@ -1,0 +1,35 @@
+name: Check the live app
+
+on:
+  schedule:
+    - cron: "29 */4 * * *"   # keep it awake: Streamlit sleeps apps after ~12 hours without visitors
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "wake = just wake it, test = also run the 12-statement accuracy test"
+        default: wake
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: python .github/check_app.py ${{ github.event.inputs.mode || 'wake' }}
+      - name: Show page text
+        if: always()
+        run: for f in out/*.txt; do [ -f "$f" ] && { echo "===== $f"; cat "$f"; }; done; true
+      - name: Save screenshots to the check-results branch
+        if: always() && github.event.inputs.mode == 'test'
+        run: |
+          [ -d out ] || exit 0
+          cd out && git init -q -b check-results && git add -A
+          git -c user.name=check -c user.email=check@users.noreply.github.com commit -qm "check run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" check-results

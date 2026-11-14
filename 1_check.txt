@@ -1,0 +1,30 @@
+🧾
+
+Statement Check
+
+Reads a bank statement and checks it against the loan application
+Demo · invented data
+For a lender's underwriting team · runs on Google Gemini
+
+Check a statement
+
+Accuracy test (12 statements)
+
+Sample applications
+
+Upload your own
+
+▶ Check the statement
+
+✅ Consistent with the application
+
+Income of about 1,320 EUR a month matches the 1,300 stated. Name, date and payments raise no questions.
+
+A person makes the decision. This check tells them where to look.
+
+keyboard_arrow_right
+
+Show the details
+
+Built by Jānis Saulītis with AI · Google Gemini reads · checker.py decides
+See more tools

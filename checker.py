@@ -98,7 +98,7 @@ def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) ->
     content = ([f"Bank statement text (one value per line, as extracted from the PDF):\n{text}"] if len(text) > 200
                else [types.Part.from_bytes(data=pdf, mime_type="application/pdf"), "Read this bank statement."])
 
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=120_000))  # never hang on one call
     models = list(models)
     think_off = True
     for attempt in range(6):
@@ -120,7 +120,7 @@ def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) ->
             if think_off and "thinking" in msg.lower():
                 think_off = False
                 continue
-            busy = "503" in msg or "UNAVAILABLE" in msg or "overloaded" in msg
+            busy = "timed out" in msg.lower() or "timeout" in msg.lower() or "503" in msg or "UNAVAILABLE" in msg or "overloaded" in msg
             limited = "429" in msg or "RESOURCE_EXHAUSTED" in msg
             if (busy or (limited and (attempt >= 1 or "PerDay" in msg))) and len(models) > 1:
                 models.pop(0)

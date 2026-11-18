@@ -1,7 +1,13 @@
 [theme.light]
-primaryColor = "#1f9d6f"
+primaryColor = "#127a5b"
+backgroundColor = "#f5f6f8"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#101828"
 codeTextColor = "#8a5a00"
 
 [theme.dark]
-primaryColor = "#2fb985"
-codeTextColor = "#f2c230"
+primaryColor = "#3dd39b"
+backgroundColor = "#0f1720"
+secondaryBackgroundColor = "#16212c"
+textColor = "#e6edf3"
+codeTextColor = "#f5b83d"

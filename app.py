@@ -1,5 +1,6 @@
 """Statement Check: a bank statement against the loan application. Run: streamlit run app.py"""
 import datetime as dt
+import html
 import importlib
 import json
 import os
@@ -74,22 +75,18 @@ def error_text(e):
 def show_result(result: dict, statement: dict, application: dict, pdf: bytes | None, source: str):
     icon, title, kind = LOOK[result["verdict"]]
     n = result["numbers"]
-    with st.container(border=True):
-        st.markdown(f"### {icon} {title}")
-        if result["findings"]:
-            for f in result["findings"]:
-                st.markdown(f"**{f['title']}.** {f['detail']}")
-        else:
-            st.markdown(f"Income of about **{n['typical_monthly_income']:,.0f} {n['currency']}** a month matches the "
-                        f"{n['stated_income']:,.0f} stated. Name, date and payments raise no questions.")
-        st.caption("A person makes the decision. This check tells them where to look.")
+    tone = {"consistent": "good", "review": "warn", "mismatch": "bad"}[result["verdict"]]
+    if result["findings"]:
+        body = "<br>".join(f"<b>{html.escape(f['title'])}.</b> {html.escape(f['detail'])}" for f in result["findings"])
+    else:
+        body = (f"Income of about <b>{n['typical_monthly_income']:,.0f} {n['currency']}</b> a month matches the "
+                f"{n['stated_income']:,.0f} stated. Name, date and payments raise no questions.")
+    kit.answer({"good": "Looks right", "warn": "Check before deciding", "bad": "Stop here"}[tone], title,
+               body + "<br><br>A person makes the decision. This check tells them where to look.",
+               [("Typical monthly income", f"{n['typical_monthly_income']:,.0f} {n['currency']}"),
+                ("Loan payments a month", f"{n['loan_payments_monthly']:,.0f} {n['currency']}"),
+                ("Transactions read", str(n["transactions"]))], tone=tone)
     with st.expander("Show the details"):
-        a, b, c = st.columns(3)
-        a.metric("Typical monthly income", f"{n['typical_monthly_income']:,.0f} {n['currency']}",
-                 help="The middle month, so a one-off bonus or a missing month doesn't distort it.")
-        b.metric("Loan payments a month", f"{n['loan_payments_monthly']:,.0f} {n['currency']}",
-                 help=", ".join(n["lenders"]) or "none found")
-        c.metric("Transactions read", n["transactions"])
         st.markdown("**Income by month**")
         st.bar_chart(pd.Series(n["income_by_month"], name=n["currency"]), color="#2fb985", height=200)
         st.markdown(f"**What the AI read:** {statement.get('holder')} · {statement.get('bank')} · "

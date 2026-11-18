@@ -15,7 +15,7 @@ import kit
 C = importlib.reload(C)  # Streamlit Cloud keeps old copies of imported files after an update; always use the latest
 kit = importlib.reload(kit)
 
-kit.page("Statement Check", "Reads a bank statement and checks it against the loan application", mark="🧾",
+kit.page("Statement Check", "Reads a bank statement and checks it against the loan application", mark="doc-check", icon="🧾",
          meta="For a lender's underwriting team · runs on Google Gemini")
 
 HERE = Path(__file__).parent
@@ -25,6 +25,12 @@ LOOK = {"consistent": ("✅", "Consistent with the application", "success"),
         "review": ("🟠", "Needs a look", "warning"),
         "mismatch": ("⛔", "Doesn't match the application", "error")}
 FLAG = {"lv": "🇱🇻", "lt": "🇱🇹", "pl": "🇵🇱", "es": "🇪🇸", "ro": "🇷🇴"}
+COUNTRY = {"lv": "Latvia", "lt": "Lithuania", "pl": "Poland", "es": "Spain", "ro": "Romania"}
+CHECKS = [("name_mismatch", "Name matches the applicant"), ("statement_old", "Statement is recent"),
+          ("income_lower", "Income matches what was stated"), ("income_stopped", "Income still coming in"),
+          ("undeclared_loan", "All loans declared"), ("gambling", "No regular gambling"),
+          ("bounced_payments", "No bounced payments")]
+VERDICT = {"consistent": ("good", "Consistent"), "review": ("warn", "Needs a look"), "mismatch": ("bad", "Doesn't match")}
 
 
 def secret(name, default=""):
@@ -86,25 +92,34 @@ def show_result(result: dict, statement: dict, application: dict, pdf: bytes | N
                [("Typical monthly income", f"{n['typical_monthly_income']:,.0f} {n['currency']}"),
                 ("Loan payments a month", f"{n['loan_payments_monthly']:,.0f} {n['currency']}"),
                 ("Transactions read", str(n["transactions"]))], tone=tone)
-    with st.expander("Show the details"):
+    found = {f["code"]: f for f in result["findings"]}
+    st.markdown("#### The 7 checks")
+    kit.table([{"c": label, "r": {"mismatch": "Fails", "review": "Look at this"}.get(found[code]["severity"]) if code in found
+                else "Passed", "d": found[code]["detail"] if code in found else "Nothing to flag"} for code, label in CHECKS],
+              [kit.col("Check", "c", "strong"), kit.col("Result", "r", "chip", {"Passed": "good", "Look at this": "warn", "Fails": "bad"}),
+               kit.col("What it found", "d", "muted")])
+    with st.expander("Show what the AI read"):
         st.markdown("**Income by month**")
-        st.bar_chart(pd.Series(n["income_by_month"], name=n["currency"]), color="#2fb985", height=200)
-        st.markdown(f"**What the AI read:** {statement.get('holder')} · {statement.get('bank')} · "
-                    f"{statement.get('period_start')} – {statement.get('period_end')}")
-        tx = pd.DataFrame(statement.get("transactions", []))
-        if not tx.empty:
-            st.dataframe(tx, hide_index=True, width="stretch", height=280,
-                         column_config={"amount": st.column_config.NumberColumn(format="%.2f")})
+        kit.columns_chart([(dt.date.fromisoformat(k + "-01").strftime("%b %Y"), v, f"{v:,.0f}")
+                           for k, v in n["income_by_month"].items()])
+        st.markdown(f"<p class='k-row-sub' style='margin-top:14px'>{html.escape(str(statement.get('holder')))} · "
+                    f"{html.escape(str(statement.get('bank')))} · {statement.get('period_start')} – {statement.get('period_end')}</p>",
+                    unsafe_allow_html=True)
+        txs = statement.get("transactions", [])
+        if txs:
+            kit.table([{"d": t.get("date", ""), "t": t.get("description", ""), "c": t.get("category", ""),
+                        "a": f"{float(t.get('amount') or 0):,.2f}"} for t in txs],
+                      [kit.col("Date", "d", "muted"), kit.col("Description", "t", "wrap"), kit.col("Category", "c", "chip", {}),
+                       kit.col(f"Amount {n['currency']}", "a", "num")], max_height=340)
         if pdf:
             st.download_button("Open the statement (PDF)", pdf, file_name="statement.pdf", mime="application/pdf")
-        st.caption(source)
 
 
 tab_check, tab_test = st.tabs(["Check a statement", "Accuracy test (12 statements)"])
 
 # ---------------------------------------------------------------- check one statement
 with tab_check:
-    labels = {f"{FLAG[c['language']]}  {c['application']['name']} · states {c['application']['monthly_net_income']:,} "
+    labels = {f"{c['application']['name']} ({COUNTRY[c['language']]}) · states {c['application']['monthly_net_income']:,} "
               f"{c['currency']} a month": c for c in CASES}
     mode = st.segmented_control("Statement", ["Sample applications", "Upload your own"], default="Sample applications",
                                 label_visibility="collapsed")
@@ -124,29 +139,36 @@ with tab_check:
         case = labels[pick]
         app = case["application"]
         pdf = (HERE / "data" / case["file"]).read_bytes()
-    if st.button("▶  Check the statement", type="primary", disabled=not pdf or not app["name"]):
-        st.session_state.go = (case["id"] if case else "upload")
-    if st.session_state.get("go") in ((case["id"] if case else "upload"),):
+    key = case["id"] if case else "upload"
+    b1, b2 = st.columns([1, 3])
+    if b1.button("▶  Check the statement", type="primary", disabled=not pdf or not app["name"]):
+        st.session_state.go = (key, "saved" if case else "live")
+    if case and API_KEY and b2.button("Read it live with AI (about 20 s)"):
+        st.session_state.go = (key, "live")
+    go = st.session_state.get("go") or (None, None)
+    if go[0] == key:
         statement, source = None, ""
-        if API_KEY:
+        if go[1] == "live" and API_KEY:
             try:
                 import time as _t
                 t0 = _t.time()
                 with st.spinner("The AI is reading the statement…"):
                     statement, used = read_pdf(pdf, C.PROMPT_VERSION)
-                source = f"Read by {used} in {_t.time() - t0:.0f} s · checks are fixed code (checker.py), not AI."
+                source = f"Read live by {used} in {_t.time() - t0:.0f} s. The checks are fixed rules (checker.py), not AI."
             except C.AIError as e:
-                st.warning(error_text(e))
+                st.warning(error_text(e) + " Showing the saved reading instead.")
         if statement is None and case:
             sv = saved()
             if sv and case["id"] in sv["statements"]:
                 statement = sv["statements"][case["id"]]
-                source = f"Saved reading from {sv['date']} by {sv['model']}, because the AI isn't available right now."
-            elif not API_KEY:
+                source = (f"Instant result from the AI's verified reading on {sv['date']} ({sv['model']}). "
+                          "The checks are fixed rules (checker.py), not AI.")
+            else:
                 statement = C.from_truth(case)
-                source = "No AI key set: this copy uses the statement's known contents instead of an AI reading."
+                source = "Uses the statement's known contents. The checks are fixed rules (checker.py), not AI."
         if statement:
             show_result(C.check(statement, app), statement, app, pdf, source)
+            st.caption(source)
         elif not case:
             st.info("Uploads need the AI to read them. Try again when the AI is available.")
 
@@ -156,9 +178,10 @@ with tab_test:
                 "They include the cases that catch people out: salary paid in two parts, a one-off bonus, "
                 "irregular self-employed income, a similar but different name, three small lenders.")
     with st.expander("See the 12 cases and the expected answers"):
-        st.dataframe(pd.DataFrame([{"Case": c["id"], "": FLAG[c["language"]], "Applicant": c["application"]["name"],
-                                    "Expected": c["expected"]["verdict"], "Why": c["note"]} for c in CASES]),
-                     hide_index=True, width="stretch")
+        kit.table([{"id": c["id"], "l": c["language"], "a": c["application"]["name"], "e": VERDICT[c["expected"]["verdict"]][1],
+                    "w": c["note"]} for c in CASES],
+                  [kit.col("Case", "id", "muted"), kit.col("", "l", "lang"), kit.col("Applicant", "a", "strong"),
+                   kit.col("Expected", "e", "chip", {v[1]: v[0] for v in VERDICT.values()}), kit.col("Why it's tricky", "w", "wrap")])
     sv = saved()
     run = st.button("▶  Run it live" if sv else "▶  Run the test", type="primary", disabled=not API_KEY)
     readings, label = None, ""
@@ -181,14 +204,20 @@ with tab_test:
     if readings:
         results = {c["id"]: C.check(readings[c["id"]], c["application"]) for c in CASES if c["id"] in readings}
         s = C.score(CASES, results)
-        m = st.columns(3)
-        m[0].metric("Right verdict", f"{s['verdict']:.0%}")
-        m[1].metric("Right reasons", f"{s['issues']:.0%}", help="Exactly the expected findings, no more, no fewer.")
-        m[2].metric("Problems missed", s["missed_problems"], help="A problem statement marked consistent. Target: 0.")
-        st.table(pd.DataFrame([{"Case": r["id"], "": FLAG[r["language"]], "Expected": r["expected"], "Got": r["got"],
-                                "": "✅" if r["verdict_ok"] and r["issues_ok"] else "⚠️",
-                                "Note": r["note"] + (f" · missed {r['missed']}" if r["missed"] else "")
-                                + (f" · extra {r['extra']}" if r["extra"] else "")} for r in s["rows"]]).set_index("Case"))
+        ok = sum(r["verdict_ok"] and r["issues_ok"] for r in s["rows"])
+        kit.answer("Accuracy test", f"{ok} of {len(s['rows'])} statements got the right verdict and the right reasons",
+                   f"Problems missed: <b>{s['missed_problems']}</b>. " + ("No problem statement passed as consistent."
+                   if s["missed_problems"] == 0 else "Some problem statements would have passed as consistent."),
+                   [("Right verdict", f"{s['verdict']:.0%}"), ("Right reasons", f"{s['issues']:.0%}"),
+                    ("Problems missed", str(s["missed_problems"]))], tone="good" if s["missed_problems"] == 0 else "bad")
+        kit.table([{"id": r["id"], "l": r["language"], "e": VERDICT[r["expected"]][1], "g": VERDICT[r["got"]][1],
+                    "ok": "Right" if r["verdict_ok"] and r["issues_ok"] else "Differs",
+                    "n": r["note"] + (f" · missed {', '.join(r['missed'])}" if r["missed"] else "")
+                    + (f" · extra {', '.join(r['extra'])}" if r["extra"] else "")} for r in s["rows"]],
+                  [kit.col("Case", "id", "muted"), kit.col("", "l", "lang"),
+                   kit.col("Expected", "e", "chip", {v[1]: v[0] for v in VERDICT.values()}),
+                   kit.col("Got", "g", "chip", {v[1]: v[0] for v in VERDICT.values()}),
+                   kit.col("", "ok", "chip", {"Right": "good", "Differs": "warn"}), kit.col("Case notes", "n", "wrap")])
         st.caption(label)
     elif not API_KEY:
         st.info("No AI key set on this copy, so the live test can't run.")

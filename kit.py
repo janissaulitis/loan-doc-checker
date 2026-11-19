@@ -343,6 +343,8 @@ skin("booth",  # Caption Checker: looks like the TV graphics it feeds
 .k-bug .t small { color: var(--k-muted); font-size: 13px; }
 .k-bug .n { background: #FFD60A; color: #0B0E14; font: 800 22px/1 'Barlow Condensed', sans-serif; padding: 0 18px; display: flex; align-items: center; text-transform: uppercase; white-space: nowrap; }
 .k-bug .n.held { background: #E0281E; color: #fff; }
+@media (max-width: 640px) { .k-bug { flex-wrap: wrap; } .k-bug .tag { min-height: 44px; } .k-bug .n { margin-left: auto; min-height: 44px; }
+  .k-bug .t { order: 3; flex-basis: 100%; border-top: 1px solid var(--k-line); padding: 10px 14px; } .k-bug .t b { font-size: 20px; } }
 .k-ans { background: transparent; border: 0; padding: 0; color: var(--k-ink); }
 .k-ans .k-kick, .k-ans .k-h { display: none; }
 .k-ans .k-body { color: var(--k-muted); opacity: 1; font-size: 15px; margin: 0 0 4px; }

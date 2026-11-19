@@ -1,0 +1,68 @@
+Statement Check
+
+Reads a bank statement and checks it against the loan application
+Demo · invented data
+For a lender's underwriting team · runs on Google Gemini
+
+▶ 1-min demo
+
+How it works
+
+expand_more
+
+Check a statement
+
+Accuracy test (12 statements)
+
+Sample applications
+
+Upload your own
+
+▶ Check the statement
+
+Read it live with AI (about 20 s)
+
+LĪGA BĒRZIŅA · DAUGAVA BANK
+
+Income confirmed. Nothing to ask.
+
+Typical income 1,320 EUR a month against 1,300 stated. A person makes the decision; this check tells them where to look.
+BANK STATEMENT · 2026-07-01 – 2026-09-30
+42 TRANSACTIONS
+07-10
+Alga SIA Baltic Logistics
++1,320.00
+08-10
+Alga SIA Baltic Logistics
++1,320.00
+09-10
+Alga SIA Baltic Logistics
++1,320.00
+Highlighted: income in green, loan payments in amber, gambling and bounced payments in red. Read by Google Gemini, decided by checker.py rules, not by the AI.
+APPLICATION SAYS
+Name Līga Bērziņa
+Income 1,300 EUR / month
+Other loans none
+CHECKER FOUND
+✓
+Name matches the applicant
+✓
+Statement is recent
+✓
+Income matches what was stated
+✓
+Income still coming in
+✓
+All loans declared
+✓
+No regular gambling
+✓
+No bounced payments
+keyboard_arrow_right
+
+Show what the AI read
+
+Instant result from the AI's verified reading on 2026-11-14 (gemini-3.6-flash). The checks are fixed rules (checker.py), not AI.
+
+Built by Jānis Saulītis with AI · Google Gemini reads · checker.py decides
+See more tools

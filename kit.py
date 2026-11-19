@@ -264,6 +264,30 @@ skin("field",  # AI Cost Check: a gadget with an LCD
 .k-bar span { font-family: var(--k-font-mono); font-size: 12.5px; }
 """)
 
+skin("ledger",  # AI Cost Check: a calm cost sheet; the waterfall shows where the money goes
+     palette("#F4F6F8", "#FFFFFF", "#0E1A2B", "#566273", "#0F766E", "#FFFFFF", "#0F766E", "#0F766E", "#C2410C", "#A16207"),
+     palette("#0B1220", "#121B2B", "#E6ECF3", "#93A0B2", "#2DD4BF", "#0B1220", "#5EEAD4", "#2DD4BF", "#FB923C", "#FACC15"),
+     _fonts("family=Inter+Tight:wght@400;500;600;700;800", "'Inter Tight', sans-serif"),
+     """
+.k-mark { border-radius: 10px; }
+.k-ans { background: var(--k-surface); color: var(--k-ink); border: 1px solid var(--k-line); border-radius: 16px; }
+.k-ans.warn { background: var(--k-surface); border-color: var(--k-warn-ink); }
+.k-ans .k-kick { color: var(--k-go-text) !important; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; }
+.k-ans.warn .k-kick { color: var(--k-warn-ink) !important; }
+.stApp .k-ans .k-h { font-size: 40px; letter-spacing: -.02em; }
+.k-ans .k-body { color: var(--k-muted); opacity: 1; } .k-ans .k-body b { color: var(--k-ink); }
+.k-wf { margin: 22px 0 4px; display: grid; gap: 10px; }
+.k-wf-r { display: grid; grid-template-columns: 150px 1fr 82px; gap: 12px; align-items: center; font-size: 14.5px; }
+.k-wf-r > span { color: var(--k-muted); } .k-wf-r > b { text-align: right; font-weight: 700; color: var(--k-ink); }
+.k-wf-r .tr { position: relative; height: 22px; background: var(--k-surface-2); border-radius: 6px; }
+.k-wf-r .tr i { position: absolute; top: 0; bottom: 0; border-radius: 5px; min-width: 3px; }
+.k-wf-r.gain i { background: var(--k-ok); } .k-wf-r.cost i { background: var(--k-risk); opacity: .85; }
+.k-wf-r.ai i { background: var(--k-warn-ink); } .k-wf-r.total { border-top: 1px solid var(--k-line); padding-top: 10px; }
+.k-wf-r.total i { background: var(--k-ink); } .k-wf-r.total > span, .k-wf-r.total > b { color: var(--k-ink); font-weight: 800; }
+.k-wf-r.ai > span::after { content: " ← the AI"; color: var(--k-warn-ink); font-weight: 700; }
+@media (max-width: 640px) { .k-wf-r { grid-template-columns: 110px 1fr 66px; font-size: 13px; } .stApp .k-ans .k-h { font-size: 30px; } }
+""")
+
 skin("flap",  # Court Finish: departures board
      palette("#ECE7DC", "#FFFFFF", "#1A1A1A", "#615B50", "#B86A00", "#FFFFFF", "#8F5200", "#2E7D3E", "#C0391B", "#8F5200"),
      palette("#111111", "#1C1C1C", "#EDE6D6", "#A8A295", "#FFB000", "#111111", "#FFB000", "#7FD18B", "#FF6B4A", "#FFB000"),

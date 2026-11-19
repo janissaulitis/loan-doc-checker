@@ -18,6 +18,9 @@ kit = importlib.reload(kit)
 kit.page("Statement Check", "Reads a bank statement and checks it against the loan application", mark="doc-check", icon="🧾",
          meta="For a lender's underwriting team · runs on Google Gemini", theme="broadsheet")
 
+kit.demo(os.environ.get("DEMO_VIDEO", "https://janis-saulitis-portfolio.netlify.app/media/doc.mp4"), "Statement Check in 1 minute",
+         "1. Pick a **sample application** (or upload your own statement) and click **Check the statement**.\n2. Google Gemini reads the statement; fixed rules check it against the application.\n3. Read the verdict and every check, with the statement lines that support it.\n4. The **accuracy test** shows all 12 test statements and the expected answers.")
+
 HERE = Path(__file__).parent
 CASES = json.loads((HERE / "data" / "cases.json").read_text(encoding="utf-8"))
 SAVED = HERE / "data" / "verified" / "test.json"

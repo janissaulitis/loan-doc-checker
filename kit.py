@@ -276,16 +276,21 @@ skin("ledger",  # AI Cost Check: a calm cost sheet; the waterfall shows where th
 .k-ans.warn .k-kick { color: var(--k-warn-ink) !important; }
 .stApp .k-ans .k-h { font-size: 40px; letter-spacing: -.02em; }
 .k-ans .k-body { color: var(--k-muted); opacity: 1; } .k-ans .k-body b { color: var(--k-ink); }
-.k-wf { margin: 22px 0 4px; display: grid; gap: 10px; }
-.k-wf-r { display: grid; grid-template-columns: 150px 1fr 82px; gap: 12px; align-items: center; font-size: 14.5px; }
-.k-wf-r > span { color: var(--k-muted); } .k-wf-r > b { text-align: right; font-weight: 700; color: var(--k-ink); }
-.k-wf-r .tr { position: relative; height: 22px; background: var(--k-surface-2); border-radius: 6px; }
-.k-wf-r .tr i { position: absolute; top: 0; bottom: 0; border-radius: 5px; min-width: 3px; }
-.k-wf-r.gain i { background: var(--k-ok); } .k-wf-r.cost i { background: var(--k-risk); opacity: .85; }
-.k-wf-r.ai i { background: var(--k-warn-ink); } .k-wf-r.total { border-top: 1px solid var(--k-line); padding-top: 10px; }
-.k-wf-r.total i { background: var(--k-ink); } .k-wf-r.total > span, .k-wf-r.total > b { color: var(--k-ink); font-weight: 800; }
-.k-wf-r.ai > span::after { content: " ← the AI"; color: var(--k-warn-ink); font-weight: 700; }
-@media (max-width: 640px) { .k-wf-r { grid-template-columns: 110px 1fr 66px; font-size: 13px; } .stApp .k-ans .k-h { font-size: 30px; } }
+.k-ans .k-h em { font-style: normal; color: var(--k-ok); }
+.k-ans.warn .k-h em { color: var(--k-warn-ink); }
+.k-split { margin-top: 20px; }
+.k-split-h { display: flex; justify-content: space-between; font-size: 13px; color: var(--k-muted); margin-bottom: 8px; }
+.k-split-bar { display: flex; height: 16px; border-radius: 8px; overflow: hidden; gap: 2px; background: var(--k-surface-2); }
+.k-split-bar i { display: block; height: 100%; min-width: 4px; }
+.k-split-bar .keep { background: var(--k-ok); } .k-split-bar .check { background: var(--k-risk); }
+.k-split-bar .tools { background: var(--k-muted); } .k-split-bar .ai { background: var(--k-warn-ink); }
+.k-split-l { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.k-split-l div { border-left: 3px solid; padding-left: 10px; }
+.k-split-l span { display: block; font-size: 12.5px; color: var(--k-muted); }
+.k-split-l b { display: block; font-size: 20px; font-weight: 800; color: var(--k-ink); }
+.k-split-l .keep { border-color: var(--k-ok); } .k-split-l .keep b { color: var(--k-ok); }
+.k-split-l .check { border-color: var(--k-risk); } .k-split-l .tools { border-color: var(--k-muted); } .k-split-l .ai { border-color: var(--k-warn-ink); }
+@media (max-width: 640px) { .k-split-l { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stApp .k-ans .k-h { font-size: 30px; } }
 """)
 
 skin("flap",  # Court Finish: departures board

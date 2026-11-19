@@ -326,7 +326,7 @@ skin("flap",  # Court Finish: departures board
 .k-dep .blank span { color: transparent; }
 .k-board-f { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; border-top: 1px solid #2a2a2a; margin-top: 14px; padding-top: 12px;
   font-size: 12.5px; color: #A8A295; letter-spacing: .04em; text-transform: uppercase; }
-@media (max-width: 760px) { .k-dep { grid-template-columns: 54px 1fr 1fr; } .k-dep .nb, .k-dep.h .nb, .k-dep .st { display: none; }
+@media (max-width: 760px) { .k-dep { grid-template-columns: 52px auto auto; justify-content: space-between; gap: 14px; padding: 9px 0; } .k-dep .nb, .k-dep.h .nb, .k-dep .st { display: none; } .k-flap.sm { gap: 2px; } .k-flap.sm span { width: 19px; height: 28px; font-size: 16px; } .k-flap.sm span.c { width: 8px; }
   .k-flap.big span { width: 44px; height: 64px; font-size: 44px; } }
 """)
 

@@ -89,7 +89,7 @@ def pdf_text(pdf: bytes) -> str:
         return ""
 
 
-def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) -> tuple[dict, str]:
+def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None, budget: float | None = None) -> tuple[dict, str]:
     """Sends the statement's text when it has one (fast, small), the PDF itself when it is a scan."""
     from google import genai
     from google.genai import types
@@ -98,10 +98,14 @@ def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) ->
     content = ([f"Bank statement text (one value per line, as extracted from the PDF):\n{text}"] if len(text) > 200
                else [types.Part.from_bytes(data=pdf, mime_type="application/pdf"), "Read this bank statement."])
 
-    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=120_000))  # never hang on one call
+    # never hang on one call; with a time budget (a visitor waiting), give up early so the app can say so
+    t0 = time.monotonic()
+    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=int(min(120, budget or 120) * 1000)))
     models = list(models)
     think_off = True
     for attempt in range(6):
+        if budget and time.monotonic() - t0 > budget:
+            raise AIError(f"BUSY: no answer from the AI within {budget:.0f} seconds")
         model = models[0]
         try:
             cfg = dict(system_instruction=SYSTEM, response_mime_type="application/json", response_schema=SCHEMA,
@@ -132,6 +136,8 @@ def read_statement(pdf: bytes, api_key: str, models: list[str], on_wait=None) ->
             wait = (20 if limited else 3) * (attempt + 1) / 2
             if on_wait:
                 on_wait("rate limit" if limited else msg[:100], attempt + 1, wait)
+            if budget:
+                wait = min(wait, max(0.0, budget - (time.monotonic() - t0)))
             time.sleep(wait)
     raise AIError("The AI did not answer after several tries.")
 

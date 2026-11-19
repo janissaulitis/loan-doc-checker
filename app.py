@@ -62,7 +62,7 @@ def read_pdf(pdf: bytes, version: str):
         raise C.AIError(str(e)) from e
     note = st.empty()
     out = C.read_statement(pdf, API_KEY, ms,
-                           on_wait=lambda why, k, w: note.caption(f"Waiting {w:.0f} s ({why}), attempt {k} of 6…"))
+                           on_wait=lambda why, k, w: note.caption(f"Waiting {w:.0f} s ({why}), attempt {k} of 6…"), budget=40)
     note.empty()
     return out
 
@@ -76,6 +76,8 @@ def saved():
 
 def error_text(e):
     msg = str(e)
+    if msg.startswith("BUSY"):
+        return "Google's AI is busy right now and didn't answer in time. Try again in a few minutes."
     if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
         return "Today's free AI requests are used up. They reset every morning."
     return f"The AI service did not answer: {msg[:300]}"

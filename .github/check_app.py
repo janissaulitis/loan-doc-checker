@@ -24,7 +24,7 @@ with sync_playwright() as p:
         err = app.locator("[data-testid=stAlertContentError]").or_(app.locator("[data-testid=stException]"))
         try:
             app.get_by_role("button", name="Check the statement").click()
-            app.get_by_text("Show the details").or_(err).or_(app.locator("[data-testid=stAlertContentWarning]")).first.wait_for(timeout=600_000)
+            app.get_by_text("Show what the AI read").or_(err).or_(app.locator("[data-testid=stAlertContentWarning]")).first.wait_for(timeout=600_000)
             page.wait_for_timeout(2_000)
             print(f"single check done at {time.strftime('%H:%M:%S')}")
             page.screenshot(path=str(out / "1_check.png"))

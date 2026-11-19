@@ -16,7 +16,7 @@ C = importlib.reload(C)  # Streamlit Cloud keeps old copies of imported files af
 kit = importlib.reload(kit)
 
 kit.page("Statement Check", "Reads a bank statement and checks it against the loan application", mark="doc-check", icon="🧾",
-         meta="For a lender's underwriting team · runs on Google Gemini")
+         meta="For a lender's underwriting team · runs on Google Gemini", theme="broadsheet")
 
 HERE = Path(__file__).parent
 CASES = json.loads((HERE / "data" / "cases.json").read_text(encoding="utf-8"))
@@ -82,22 +82,39 @@ def show_result(result: dict, statement: dict, application: dict, pdf: bytes | N
     icon, title, kind = LOOK[result["verdict"]]
     n = result["numbers"]
     tone = {"consistent": "good", "review": "warn", "mismatch": "bad"}[result["verdict"]]
-    if result["findings"]:
-        body = "<br>".join(f"<b>{html.escape(f['title'])}.</b> {html.escape(f['detail'])}" for f in result["findings"])
-    else:
-        body = (f"Income of about <b>{n['typical_monthly_income']:,.0f} {n['currency']}</b> a month matches the "
-                f"{n['stated_income']:,.0f} stated. Name, date and payments raise no questions.")
-    kit.answer({"good": "Looks right", "warn": "Check before deciding", "bad": "Stop here"}[tone], title,
-               body + "<br><br>A person makes the decision. This check tells them where to look.",
-               [("Typical monthly income", f"{n['typical_monthly_income']:,.0f} {n['currency']}"),
-                ("Loan payments a month", f"{n['loan_payments_monthly']:,.0f} {n['currency']}"),
-                ("Transactions read", str(n["transactions"]))], tone=tone)
     found = {f["code"]: f for f in result["findings"]}
-    st.markdown("#### The 7 checks")
-    kit.table([{"c": label, "r": {"mismatch": "Fails", "review": "Look at this"}.get(found[code]["severity"]) if code in found
-                else "Passed", "d": found[code]["detail"] if code in found else "Nothing to flag"} for code, label in CHECKS],
-              [kit.col("Check", "c", "strong"), kit.col("Result", "r", "chip", {"Passed": "good", "Look at this": "warn", "Fails": "bad"}),
-               kit.col("What it found", "d", "muted")])
+    words = ["Nothing", "One thing", "Two things", "Three things", "Four things", "Five things"]
+    reviews = [f for f in result["findings"] if f["severity"] == "review"]
+    if result["verdict"] == "mismatch":
+        verdict = f"{[f for f in result['findings'] if f['severity'] == 'mismatch'][0]['title']}. Don't approve as it stands."
+    else:
+        first = "Income doesn't hold up." if {"income_lower", "income_stopped"} & set(found) else "Income confirmed."
+        verdict = f"{first} {words[min(len(reviews), 5)]} to ask."
+    kit.answer(f"{statement.get('holder', application.get('name', ''))} · {statement.get('bank', '')}", verdict,
+               f"Typical income {n['typical_monthly_income']:,.0f} {n['currency']} a month against {n['stated_income']:,.0f} stated. "
+               "A person makes the decision; this check tells them where to look.", tone=tone)
+    tx = statement.get("transactions", [])
+    flag = {"salary": "good", "other_income": "good", "loan_repayment": "warn", "gambling_out": "bad", "gambling_in": "bad",
+            "returned_payment": "bad"}
+    show = [t for t in tx if t.get("category") in flag][:9] or tx[:9]
+    left, right = st.columns([7, 5], gap="large")
+    with left:
+        st.markdown('<div class="k-paper"><div class="k-paper-h"><span>Bank statement · '
+                    f'{html.escape(str(statement.get("period_start", "")))} – {html.escape(str(statement.get("period_end", "")))}</span>'
+                    f'<span>{len(tx)} transactions</span></div>' + "".join(
+                        f'<div class="k-paper-r {flag.get(t.get("category"), "")}"><span>{html.escape(str(t.get("date", ""))[5:])}</span>'
+                        f'<span>{html.escape(str(t.get("description", "")))}</span><b>{float(t.get("amount") or 0):+,.2f}</b></div>' for t in show)
+                    + '<div class="k-paper-f">Highlighted: income in green, loan payments in amber, gambling and bounced payments in red. '
+                      'Read by Google Gemini, decided by checker.py rules, not by the AI.</div></div>', unsafe_allow_html=True)
+    with right:
+        st.markdown(f'<div class="k-note"><h5>Application says</h5><div class="m">Name {html.escape(str(application.get("name", "")))}<br>'
+                    f'Income {application.get("monthly_net_income", 0):,} {n["currency"]} / month<br>'
+                    f'Other loans {application.get("declared_loan_payments", 0) or "none"}</div></div>', unsafe_allow_html=True)
+        items = "".join(
+            (f'<div class="k-find {"bad" if found[c]["severity"] == "mismatch" else "warn"}"><i>{"✕" if found[c]["severity"] == "mismatch" else "?"}</i>'
+             f'<span><b>{html.escape(found[c]["title"])}.</b> {html.escape(found[c]["detail"])}</span></div>') if c in found
+            else f'<div class="k-find ok"><i>✓</i><span>{html.escape(label)}</span></div>' for c, label in CHECKS)
+        st.markdown(f'<div class="k-note"><h5>Checker found</h5>{items}</div>', unsafe_allow_html=True)
     with st.expander("Show what the AI read"):
         st.markdown("**Income by month**")
         kit.columns_chart([(dt.date.fromisoformat(k + "-01").strftime("%b %Y"), v, f"{v:,.0f}")
